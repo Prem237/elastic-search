@@ -20,7 +20,7 @@ public class ElasticSearchQuery {
 
     public SearchHits<Product> getQueryResults(String query){
         Query searchQuery = new StringQuery(
-                "{\"multi_match\":{\"query\" : \"Men's Torin 6\",\"fields\": [\"pid\",\"brand\",\"display_name\",\"webPgc\",\"webSubPgc\"]}}");
+                "{\"multi_match\":{\"query\" : \""+query+"\",\"fields\": [\"pid\",\"brand\",\"display_name\",\"webPgc\",\"webSubPgc\"]}}");
 
         SearchHits<Product> products = elasticsearchOperations.search(
                 searchQuery,
